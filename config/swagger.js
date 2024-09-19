@@ -13,7 +13,7 @@ let options = {
             "application/json",
             "application/xml"
         ],
-        schemes: ['https','http'],
+        schemes: ['http','https'],
         securityDefinitions: {
             JWT: {
                 type: 'apiKey',

@@ -3,13 +3,14 @@ const router=express.Router()
 const userController=require('../controllers/userController')
 const validationMiddleware=require('../middleware/validation')
 
-
+// here the endpoint for the sign up and the sign in and i added middleware to validate 
+// the object schema for each request with joi validation
 router.post('/signup', validationMiddleware.validate('userRepository','SignupSchema'), userController.signup)
 router.post('/signin', validationMiddleware.validate('userRepository','SigninSchema'), userController.signin)
 
 
 module.exports=router;
-
+// this is the swagger docs for the signup an signin 
 /**
  * @typedef userSignUp
  * @property {string} email.required

@@ -21,5 +21,5 @@ module.exports.encrypt_password = async function (plain_text) {
 
 module.exports.genrate_token = function (user) {
     let random_key = Math.random().toString(36).substring(7);
-    return jwt.sign({ id: user.id, key: random_key }, process.env.user_private_key)
+    return jwt.sign({ id: user.id, key: random_key }, process.env.user_private_key || 'test')
 }
